@@ -3,6 +3,14 @@
 Shared branding, layout and config for my documentation sites, published as
 [`@timmo001/docs-kit`](packages/docs-kit/README.md) on npm and JSR.
 
+## Sites using it
+
+| [dotfiles.timmo.dev](https://dotfiles.timmo.dev)                                    | [upnext.timmo.dev](https://upnext.timmo.dev)                                |
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [![Dotfiles docs](.github/screenshots/dotfiles.png)](https://dotfiles.timmo.dev)    | [![Up Next docs](.github/screenshots/upnext.png)](https://upnext.timmo.dev) |
+| [ha-bridge.timmo.dev](https://ha-bridge.timmo.dev)                                  | [triage.timmo.dev](https://triage.timmo.dev)                                |
+| [![HA Bridge docs](.github/screenshots/ha-bridge.png)](https://ha-bridge.timmo.dev) | [![Triage docs](.github/screenshots/triage.png)](https://triage.timmo.dev)  |
+
 ## Agent skill
 
 [The docs-kit skill](skills/docs-kit/SKILL.md) guides agents setting up or
