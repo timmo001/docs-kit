@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "skills": {
+    "changeset-scope": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "changeset-scope/SKILL.md",
+      "computedHash": "792358f213f571ca78ed6b0a6118020398a9bb1288d855c8c127cb344e14f4be"
+    },
+    "code-review": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "code-review/SKILL.md",
+      "computedHash": "bc6af04ecee3f4a40dcacc77a8c6cd3046f3982159b9469eae49f30bb14d02cd"
+    },
+    "effect-principles": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "effect-principles/SKILL.md",
+      "computedHash": "8d56fdf5c00665759b049647ea356b387c628eef9807ffdf6165b0413ac3ab31"
+    },
+    "skill-prefixes": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "skill-prefixes/SKILL.md",
+      "computedHash": "8c4203c19621bc61824eb955e9584dbebc47774de8bad7b02653fb59c1e419c4"
+    },
+    "testing": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "testing/SKILL.md",
+      "computedHash": "7c74f791a944918717c04032b10821667d252f50a39e14e58e642074275280f9"
+    },
+    "types-enforce-ts": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "types-enforce-ts/SKILL.md",
+      "computedHash": "182012ad1eab7894f4736a0144bddf659a4e87bd6e992129837d0fcb704c1161"
+    },
+    "writing-style": {
+      "source": "timmo001/skills",
+      "ref": "bce0f7b51287e20d0f1fbbc2c217c947e8dcdfa5",
+      "sourceType": "github",
+      "skillPath": "writing-style/SKILL.md",
+      "computedHash": "b2fb6c12825c1e43aedcc53756af90b2058d5422a353110396fbb8c3375e51da"
+    }
+  }
+}
