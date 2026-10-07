@@ -1,0 +1,47 @@
+---
+import Search from "blume/components/layout/Search.astro";
+import { SOCIAL_ICONS } from "blume/components/layout/footer-socials.ts";
+import data from "blume:data";
+
+const repoUrl = data.config.repoUrl;
+
+const github = SOCIAL_ICONS.github;
+---
+
+<Search {...Astro.props} />
+{
+  repoUrl && (
+    <a
+      aria-label="GitHub repository"
+      class="header-github"
+      data-blume-tooltip="GitHub repository"
+      href={repoUrl}
+      rel="noreferrer"
+      target="_blank"
+    >
+      <svg aria-hidden="true" fill="currentColor" height="18" viewBox="0 0 24 24" width="18">
+        <path d={github.path} />
+      </svg>
+    </a>
+  )
+}
+
+<style>
+  .header-github {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    color: var(--color-muted-foreground);
+    transition-property: color, background-color;
+    transition-duration: 150ms;
+  }
+
+  .header-github:hover {
+    background-color: var(--color-muted);
+    color: var(--color-foreground);
+  }
+</style>

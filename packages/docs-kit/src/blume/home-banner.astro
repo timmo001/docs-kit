@@ -1,0 +1,155 @@
+---
+import data from "blume:data";
+
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+  page: { description?: string; route: string; title: string };
+  route: string;
+}
+
+const { page, route } = Astro.props;
+
+const home = route === "/" || page.route === "/";
+
+const description = page.description ?? data.config.description;
+---
+
+{
+  home && description && (
+    <section aria-labelledby="home-banner-title" class="home-banner">
+      <div class="home-banner-inner">
+        <img alt="" class="home-banner-logo home-banner-logo-light" height="208" src="/logo-light.svg" width="208" />
+        <img alt="" class="home-banner-logo home-banner-logo-dark" height="208" src="/logo-dark.svg" width="208" />
+        <h1 class="home-banner-title" id="home-banner-title">
+          {data.config.title}
+        </h1>
+        <p class="home-banner-description">{description}</p>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  /* Set --home-banner-logo-size, --home-banner-height,
+     --home-banner-background or --home-banner-background-dark in the site's
+     theme.css to resize or recolour the banner. */
+  .home-banner {
+    position: relative;
+    overflow: hidden;
+    margin: -1.5rem -1.5rem 2rem;
+    padding: 0 1.5rem 1.5rem;
+    background-color: var(--home-banner-background, #d4d4d8);
+  }
+
+  :global([data-theme="dark"]) .home-banner {
+    background-color: var(--home-banner-background-dark, #18181b);
+  }
+
+  .home-banner-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 48rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .home-banner-logo {
+    width: var(--home-banner-logo-size, 9rem);
+    height: var(--home-banner-logo-size, 9rem);
+    margin-top: 1.5rem;
+  }
+
+  .home-banner-logo-dark,
+  :global([data-theme="dark"]) .home-banner-logo-light {
+    display: none;
+  }
+
+  :global([data-theme="dark"]) .home-banner-logo-dark {
+    display: block;
+  }
+
+  .home-banner-title {
+    margin-top: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    letter-spacing: -0.025em;
+    color: #18181b;
+  }
+
+  :global([data-theme="dark"]) .home-banner-title {
+    color: #ffffff;
+  }
+
+  .home-banner-description {
+    max-width: 36rem;
+    margin-top: 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #3f3f46;
+  }
+
+  :global([data-theme="dark"]) .home-banner-description {
+    color: #d4d4d8;
+  }
+
+  /* The home page's own title is the banner. The layout still prints the
+     page heading and lede under it. */
+  :global(main:has(.home-banner) > article > h1:first-of-type),
+  :global(main:has(.home-banner) > article > h1:first-of-type + p) {
+    display: none;
+  }
+
+  @media (min-width: 40rem) {
+    .home-banner {
+      padding-bottom: 2rem;
+    }
+
+    .home-banner-logo {
+      width: var(--home-banner-logo-size, 13rem);
+      height: var(--home-banner-logo-size, 13rem);
+    }
+
+    .home-banner-title {
+      font-size: 3.75rem;
+      line-height: 1;
+    }
+
+    .home-banner-description {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .home-banner {
+      margin-inline: -2rem;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .home-banner {
+      margin-inline: -2.5rem;
+    }
+  }
+
+  /* Where the "On this page" rail shows, run the banner across the whole grid
+     (see theme.css for its columns) and start the rail below the banner. */
+  @media (min-width: 80rem) {
+    :global([data-blume-doc-grid]:has(> [data-blume-toc])) .home-banner {
+      --gutter: max(0px, (100cqw - 40rem - var(--blume-content-width)) / 2);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: var(--home-banner-height, 25rem);
+      margin-inline-start: calc(-2.5rem - var(--gutter));
+      margin-inline-end: calc(-20rem - var(--gutter));
+    }
+
+    :global(div:has(> main .home-banner) > [data-blume-toc]) {
+      margin-top: var(--home-banner-height, 25rem);
+    }
+  }
+</style>
