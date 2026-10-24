@@ -35,6 +35,15 @@ const fontStack = "Inter, 'Liberation Sans', 'DejaVu Sans', Arial, sans-serif";
 
 const svgOpenTag = /^<svg\b[^>]*>/;
 
+/** The card title's largest font size, used whenever the title fits. */
+const titleMaxSize = 104;
+
+/**
+ * Roughly how wide a bold title character is, as a share of its font size.
+ * On the generous side, so a long title shrinks before it runs off the card.
+ */
+const titleCharWidth = 0.6;
+
 const escapeXml = (text: string) =>
   text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
@@ -69,6 +78,15 @@ export const writeBrandImages = async (
     const textX = logoX + logoSize + 60;
     const top = Math.round(height / 2 - 25);
 
+    // Shrink a long title to fit beside the logo, keeping the same margin on
+    // the right as between the logo and the text
+    const titleSize = Math.min(
+      titleMaxSize,
+      Math.floor(
+        (width - textX - 60) / (options.title.length * titleCharWidth),
+      ),
+    );
+
     const taglineLines = options.tagline
       .map(
         (line, index) =>
@@ -83,7 +101,7 @@ export const writeBrandImages = async (
   <rect width="${width}" height="10" fill="${options.accent}"/>
   ${logoAt(logoX, logoY, logoSize)}
   <g font-family="${fontStack}" fill="#ffffff">
-    <text x="${textX}" y="${top}" font-size="104" font-weight="700">${escapeXml(options.title)}</text>
+    <text x="${textX}" y="${top}" font-size="${titleSize}" font-weight="700">${escapeXml(options.title)}</text>
     ${taglineLines}
     <text x="${textX + 4}" y="${siteY}" font-size="30" fill="${options.accent}">${escapeXml(options.site)}</text>
   </g>
