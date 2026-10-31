@@ -9,27 +9,27 @@ A quarter-rem scale, multiplied by the theme's density (0.85 compact, 1 normal, 
 
 | Token | Size at normal density |
 | --- | --- |
-| `--ds-space-1` | 0.125rem |
-| `--ds-space-2` | 0.25rem |
-| `--ds-space-3` | 0.5rem |
-| `--ds-space-4` | 0.75rem |
-| `--ds-space-5` | 1rem |
-| `--ds-space-6` | 1.5rem |
-| `--ds-space-7` | 2rem |
-| `--ds-space-8` | 3rem |
+| `--gw-space-1` | 0.125rem |
+| `--gw-space-2` | 0.25rem |
+| `--gw-space-3` | 0.5rem |
+| `--gw-space-4` | 0.75rem |
+| `--gw-space-5` | 1rem |
+| `--gw-space-6` | 1.5rem |
+| `--gw-space-7` | 2rem |
+| `--gw-space-8` | 3rem |
 
 ## Radius
 
-A fixed scale, `--ds-radius-xs` (2px) to `--ds-radius-xl` (16px) and `--ds-radius-pill`, plus three the theme sets: `--ds-radius-panel`, `--ds-radius-control` and `--ds-radius-chip`.
+A fixed scale, `--gw-radius-xs` (2px) to `--gw-radius-xl` (16px) and `--gw-radius-pill`, plus three the theme sets: `--gw-radius-panel`, `--gw-radius-control` and `--gw-radius-chip`.
 
 ## Motion
 
-`--ds-motion-fast` (120ms) and `--ds-motion-slow` (220ms) with `--ds-motion-easing`, `cubic-bezier(0.2, 0, 0, 1)`. Both drop to 1ms under `prefers-reduced-motion`.
+`--gw-motion-fast` (120ms) and `--gw-motion-slow` (220ms) with `--gw-motion-easing`, `cubic-bezier(0.2, 0, 0, 1)`. Both drop to 1ms under `prefers-reduced-motion`.
 
 ## Elevation
 
-`--ds-shadow-s`, `-m` and `-l`, from black at low opacity. Dark modes use stronger shadows, since a shadow reads less on a dark surface.
+`--gw-shadow-s`, `-m` and `-l`, from black at low opacity. Dark modes use stronger shadows, since a shadow reads less on a dark surface.
 
 ## Focus
 
-A 2px outline in `--ds-color-focus`, offset by 2px: `--ds-focus-width` and `--ds-focus-offset`. Terminals use reverse video or a marker.
+A 2px outline in `--gw-color-focus`, offset by 2px: `--gw-focus-width` and `--gw-focus-offset`. Terminals use reverse video or a marker.

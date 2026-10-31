@@ -25,7 +25,7 @@ Every target reads the same theme document and the same roles. What changes is t
 
 | File | For |
 | --- | --- |
-| `themes.css` | Web apps and sites: `--ds-*` variables per theme and mode, with `prefers-color-scheme` for following the system |
+| `themes.css` | Web apps and sites: `--gw-*` variables per theme and mode, with `prefers-color-scheme` for following the system |
 | `themes.json` | Anything else that reads data: every theme's style and resolved colours |
 | `themes.ts` | TypeScript apps, typed with each theme's id |
 | `Themes.qml` | Omarchy panels: a singleton with every theme's colours |

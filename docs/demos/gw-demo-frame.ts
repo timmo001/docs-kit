@@ -8,13 +8,13 @@ const labels: Record<string, string> = {
 };
 
 /**
- * Frames a demo with a theme and mode picker. It sets `data-ds-theme` and
- * `data-ds-mode` on itself, so everything slotted inside follows them.
+ * Frames a demo with a theme and mode picker. It sets `data-gw-theme` and
+ * `data-gw-mode` on itself, so everything slotted inside follows them.
  */
-export class DsDemoFrame extends LitElement {
+export class GwDemoFrame extends LitElement {
   static override properties = {
-    theme: { attribute: "data-ds-theme", reflect: true },
-    mode: { attribute: "data-ds-mode", reflect: true },
+    theme: { attribute: "data-gw-theme", reflect: true },
+    mode: { attribute: "data-gw-mode", reflect: true },
     clicks: { state: true },
   };
 
@@ -22,71 +22,71 @@ export class DsDemoFrame extends LitElement {
     :host {
       display: block;
       overflow: hidden;
-      font-family: var(--ds-font-sans);
-      color: var(--ds-color-text-primary);
-      background: var(--ds-color-surface-default);
-      border: 1px solid var(--ds-color-border-normal);
-      border-radius: var(--ds-radius-panel);
+      font-family: var(--gw-font-sans);
+      color: var(--gw-color-text-primary);
+      background: var(--gw-color-surface-default);
+      border: 1px solid var(--gw-color-border-normal);
+      border-radius: var(--gw-radius-panel);
     }
 
     .toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--ds-space-3);
+      gap: var(--gw-space-3);
       align-items: center;
-      padding: var(--ds-space-3) var(--ds-space-5);
-      font-size: var(--ds-font-size-xs);
-      background: var(--ds-color-surface-lower);
-      border-bottom: 1px solid var(--ds-color-border-quiet);
+      padding: var(--gw-space-3) var(--gw-space-5);
+      font-size: var(--gw-font-size-xs);
+      background: var(--gw-color-surface-lower);
+      border-bottom: 1px solid var(--gw-color-border-quiet);
     }
 
     select {
-      padding: var(--ds-space-2) var(--ds-space-3);
+      padding: var(--gw-space-2) var(--gw-space-3);
       font: inherit;
-      color: var(--ds-color-text-strong);
-      background: var(--ds-color-surface-raised);
-      border: 1px solid var(--ds-color-border-normal);
-      border-radius: var(--ds-radius-control);
+      color: var(--gw-color-text-strong);
+      background: var(--gw-color-surface-raised);
+      border: 1px solid var(--gw-color-border-normal);
+      border-radius: var(--gw-radius-control);
     }
 
     .modes {
       display: inline-flex;
       overflow: hidden;
-      border: 1px solid var(--ds-color-border-normal);
-      border-radius: var(--ds-radius-control);
+      border: 1px solid var(--gw-color-border-normal);
+      border-radius: var(--gw-radius-control);
     }
 
     .modes button {
-      padding: var(--ds-space-2) var(--ds-space-4);
+      padding: var(--gw-space-2) var(--gw-space-4);
       font: inherit;
-      color: var(--ds-color-text-primary);
+      color: var(--gw-color-text-primary);
       cursor: pointer;
-      background: var(--ds-color-surface-raised);
+      background: var(--gw-color-surface-raised);
       border: 0;
     }
 
     .modes button[aria-pressed="true"] {
-      color: var(--ds-color-on-accent);
-      background: var(--ds-color-fill-accent-resting);
+      color: var(--gw-color-on-accent);
+      background: var(--gw-color-fill-accent-resting);
     }
 
     select:focus-visible,
     .modes button:focus-visible {
-      outline: var(--ds-focus-width) solid var(--ds-color-focus);
-      outline-offset: var(--ds-focus-offset);
+      outline: var(--gw-focus-width) solid var(--gw-color-focus);
+      outline-offset: var(--gw-focus-offset);
     }
 
     .stage {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--ds-space-4);
+      gap: var(--gw-space-4);
       align-items: center;
-      padding: var(--ds-space-6) var(--ds-space-5);
+      padding: var(--gw-space-6) var(--gw-space-5);
     }
 
     .count {
       margin-inline-start: auto;
-      color: var(--ds-color-text-secondary);
+      color: var(--gw-color-text-secondary);
     }
   `;
 
@@ -102,7 +102,7 @@ export class DsDemoFrame extends LitElement {
     this.addEventListener("click", (event) => {
       if (
         event.target instanceof HTMLElement &&
-        event.target.localName === "ds-button"
+        event.target.localName === "gw-button"
       ) {
         this.clicks += 1;
       }
@@ -161,10 +161,10 @@ export class DsDemoFrame extends LitElement {
   }
 }
 
-customElements.define("ds-demo-frame", DsDemoFrame);
+customElements.define("gw-demo-frame", GwDemoFrame);
 
 declare global {
   interface HTMLElementTagNameMap {
-    "ds-demo-frame": DsDemoFrame;
+    "gw-demo-frame": GwDemoFrame;
   }
 }

@@ -7,9 +7,9 @@ interface Props {
 const { theme = "base" } = Astro.props;
 ---
 
-<ds-demo-frame class="demo" data-ds-theme={theme}>
+<gw-demo-frame class="demo" data-gw-theme={theme}>
   <slot />
-</ds-demo-frame>
+</gw-demo-frame>
 
 <script>
   // Registers the Lit elements the demos use. Astro bundles this once per page.

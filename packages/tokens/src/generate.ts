@@ -28,12 +28,12 @@ const density = { compact: 0.85, normal: 1, roomy: 1.2 } as const;
 
 const borderColour = {
   none: "transparent",
-  hairline: "var(--ds-color-border-quiet)",
-  soft: "var(--ds-color-border-normal)",
-  strong: "var(--ds-color-border-loud)",
+  hairline: "var(--gw-color-border-quiet)",
+  soft: "var(--gw-color-border-normal)",
+  strong: "var(--gw-color-border-loud)",
 } as const;
 
-/** The style as `--ds-*` properties, so components never branch on a theme. */
+/** The style as `--gw-*` properties, so components never branch on a theme. */
 const styleProperties = (style: Style) => ({
   "font-sans": fontStack(style.font),
   "font-figures": fontStack(style.figures ?? style.font),
@@ -49,22 +49,22 @@ const styleProperties = (style: Style) => ({
   "border-colour": borderColour[style.border.strength],
   "label-transform": style.capitals ? "uppercase" : "none",
   "label-tracking": style.capitals ? "0.06em" : "normal",
-  "link-colour": "var(--ds-color-link)",
+  "link-colour": "var(--gw-color-link)",
   "link-underline": style.link.underline === "thick" ? "2px" : "1px",
   "panel-sheen":
     style.surfaceAccent === "sheen"
-      ? "linear-gradient(160deg, color-mix(in oklch, var(--ds-color-accent) 14%, transparent), transparent 55%)"
+      ? "linear-gradient(160deg, color-mix(in oklch, var(--gw-color-accent) 14%, transparent), transparent 55%)"
       : "none",
   "panel-marker": style.surfaceAccent === "marker" ? "4px" : "0px",
   "panel-flange": style.surfaceAccent === "flange" ? "3px" : "0px",
   "panel-flange-colour":
     style.surfaceAccent === "flange"
-      ? "var(--ds-color-accent)"
-      : "var(--ds-border-colour)",
+      ? "var(--gw-color-accent)"
+      : "var(--gw-border-colour)",
   "row-padding":
     style.rows === "dense"
-      ? "calc(var(--ds-space-2) * 1.5)"
-      : "var(--ds-space-4)",
+      ? "calc(var(--gw-space-2) * 1.5)"
+      : "var(--gw-space-4)",
 });
 
 const shadows = (dark: boolean) => {
@@ -79,24 +79,24 @@ const shadows = (dark: boolean) => {
 };
 
 const foundations = {
-  "space-1": "calc(0.125rem * var(--ds-density))",
-  "space-2": "calc(0.25rem * var(--ds-density))",
-  "space-3": "calc(0.5rem * var(--ds-density))",
-  "space-4": "calc(0.75rem * var(--ds-density))",
-  "space-5": "calc(1rem * var(--ds-density))",
-  "space-6": "calc(1.5rem * var(--ds-density))",
-  "space-7": "calc(2rem * var(--ds-density))",
-  "space-8": "calc(3rem * var(--ds-density))",
+  "space-1": "calc(0.125rem * var(--gw-density))",
+  "space-2": "calc(0.25rem * var(--gw-density))",
+  "space-3": "calc(0.5rem * var(--gw-density))",
+  "space-4": "calc(0.75rem * var(--gw-density))",
+  "space-5": "calc(1rem * var(--gw-density))",
+  "space-6": "calc(1.5rem * var(--gw-density))",
+  "space-7": "calc(2rem * var(--gw-density))",
+  "space-8": "calc(3rem * var(--gw-density))",
   "font-size-multiplier": "1",
-  "font-size-2xs": "calc(0.6875rem * var(--ds-font-size-multiplier))",
-  "font-size-xs": "calc(0.75rem * var(--ds-font-size-multiplier))",
-  "font-size-s": "calc(0.875rem * var(--ds-font-size-multiplier))",
-  "font-size-m": "calc(1rem * var(--ds-font-size-multiplier))",
-  "font-size-l": "calc(1.125rem * var(--ds-font-size-multiplier))",
-  "font-size-xl": "calc(1.375rem * var(--ds-font-size-multiplier))",
-  "font-size-2xl": "calc(1.75rem * var(--ds-font-size-multiplier))",
-  "font-size-3xl": "calc(2.125rem * var(--ds-font-size-multiplier))",
-  "font-size-4xl": "calc(2.5rem * var(--ds-font-size-multiplier))",
+  "font-size-2xs": "calc(0.6875rem * var(--gw-font-size-multiplier))",
+  "font-size-xs": "calc(0.75rem * var(--gw-font-size-multiplier))",
+  "font-size-s": "calc(0.875rem * var(--gw-font-size-multiplier))",
+  "font-size-m": "calc(1rem * var(--gw-font-size-multiplier))",
+  "font-size-l": "calc(1.125rem * var(--gw-font-size-multiplier))",
+  "font-size-xl": "calc(1.375rem * var(--gw-font-size-multiplier))",
+  "font-size-2xl": "calc(1.75rem * var(--gw-font-size-multiplier))",
+  "font-size-3xl": "calc(2.125rem * var(--gw-font-size-multiplier))",
+  "font-size-4xl": "calc(2.5rem * var(--gw-font-size-multiplier))",
   "radius-xs": "2px",
   "radius-s": "4px",
   "radius-m": "8px",
@@ -114,7 +114,7 @@ const foundations = {
 
 const declarations = (properties: Record<string, string>, indent = "  ") =>
   Object.entries(properties)
-    .map(([name, value]) => `${indent}--ds-${name}: ${value};`)
+    .map(([name, value]) => `${indent}--gw-${name}: ${value};`)
     .join("\n");
 
 const colourProperties = (roles: Roles) =>
@@ -132,7 +132,7 @@ const modeBlock = (roles: Roles, dark: boolean, indent = "  ") =>
   ].join("\n");
 
 const themeCss = (theme: ResolvedTheme) => {
-  const selector = `[data-ds-theme="${theme.id}"]`;
+  const selector = `[data-gw-theme="${theme.id}"]`;
   const style = `${selector} {\n${declarations(styleProperties(theme.style))}\n}`;
   const { light, dark, darker } = theme.modes;
   const blocks = [style];
@@ -145,19 +145,19 @@ const themeCss = (theme: ResolvedTheme) => {
 
   if (dark !== undefined) {
     blocks.push(
-      `${selector}[data-ds-mode="dark"] {\n${modeBlock(dark, true)}\n}`,
+      `${selector}[data-gw-mode="dark"] {\n${modeBlock(dark, true)}\n}`,
     );
 
     if (light !== undefined) {
       blocks.push(
-        `@media (prefers-color-scheme: dark) {\n  ${selector}:not([data-ds-mode]) {\n${modeBlock(dark, true, "    ")}\n  }\n}`,
+        `@media (prefers-color-scheme: dark) {\n  ${selector}:not([data-gw-mode]) {\n${modeBlock(dark, true, "    ")}\n  }\n}`,
       );
     }
   }
 
   if (darker !== undefined) {
     blocks.push(
-      `${selector}[data-ds-mode="darker"] {\n${modeBlock(darker, true)}\n}`,
+      `${selector}[data-gw-mode="darker"] {\n${modeBlock(darker, true)}\n}`,
     );
   }
 
@@ -168,7 +168,7 @@ export const css = (themes: readonly ResolvedTheme[]) =>
   [
     `/* ${header} */`,
     `:root {\n${declarations(foundations)}\n}`,
-    `@media (prefers-reduced-motion: reduce) {\n  :root {\n    --ds-motion-fast: 1ms;\n    --ds-motion-slow: 1ms;\n  }\n}`,
+    `@media (prefers-reduced-motion: reduce) {\n  :root {\n    --gw-motion-fast: 1ms;\n    --gw-motion-slow: 1ms;\n  }\n}`,
     ...themes.map(themeCss),
   ].join("\n\n") + "\n";
 

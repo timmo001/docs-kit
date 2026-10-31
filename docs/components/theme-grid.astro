@@ -9,11 +9,11 @@ const core = tokens.themes.filter((theme) => !theme.optional);
     core.map((theme) => (
       <a class="card" href={`/themes/${theme.id}`}>
         <div class="split">
-          <div class="half" data-ds-mode="light" data-ds-theme={theme.id}>
+          <div class="half" data-gw-mode="light" data-gw-theme={theme.id}>
             <span class="name">{theme.name}</span>
             <span class="pill">Accent</span>
           </div>
-          <div class="half" data-ds-mode="dark" data-ds-theme={theme.id}>
+          <div class="half" data-gw-mode="dark" data-gw-theme={theme.id}>
             <span class="name">{theme.name}</span>
             <span class="pill">Accent</span>
           </div>
@@ -55,26 +55,26 @@ const core = tokens.themes.filter((theme) => !theme.optional);
     gap: 0.5rem;
     justify-items: start;
     padding: 1rem;
-    font-family: var(--ds-font-sans);
-    color: var(--ds-color-text-strong);
-    background: var(--ds-color-surface-raised);
-    background-image: var(--ds-panel-sheen);
-    border-top: var(--ds-panel-flange) solid var(--ds-color-accent);
+    font-family: var(--gw-font-sans);
+    color: var(--gw-color-text-strong);
+    background: var(--gw-color-surface-raised);
+    background-image: var(--gw-panel-sheen);
+    border-top: var(--gw-panel-flange) solid var(--gw-color-accent);
   }
 
   .name {
-    font-weight: var(--ds-font-weight-strong);
-    text-transform: var(--ds-label-transform);
-    letter-spacing: var(--ds-label-tracking);
+    font-weight: var(--gw-font-weight-strong);
+    text-transform: var(--gw-label-transform);
+    letter-spacing: var(--gw-label-tracking);
   }
 
   .pill {
     padding: 0.125rem 0.625rem;
     font-size: 0.75rem;
-    font-weight: var(--ds-font-weight-strong);
-    color: var(--ds-color-on-accent);
-    background: var(--ds-color-fill-accent-resting);
-    border-radius: var(--ds-radius-control);
+    font-weight: var(--gw-font-weight-strong);
+    color: var(--gw-color-on-accent);
+    background: var(--gw-color-fill-accent-resting);
+    border-radius: var(--gw-radius-control);
   }
 
   .description {
