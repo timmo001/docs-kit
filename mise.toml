@@ -36,6 +36,12 @@ description = "Check formatting without writing"
 depends = ["install"]
 run = "bun run --filter './packages/*' format:check"
 
+[tasks."bump-consumers"]
+description = "Bump @timmo001/docs-kit in consuming repositories"
+depends = ["install"]
+dir = "packages/bump-consumers"
+run = "bun run src/bump-consumers.ts"
+
 [tasks.check]
 description = "Lint, type-check and verify formatting"
 depends = ["lint", "typecheck", "format:check"]

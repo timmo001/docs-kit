@@ -69,3 +69,12 @@ Commit and push, then publish a GitHub release with a tag matching the version
 exactly, such as `0.1.0`. The release workflow checks the tag against both
 versions, validates the package and publishes it to npm with provenance and to
 JSR.
+
+Once npm serves the release, roll it out to the sites that use it:
+
+```sh
+mise run bump-consumers -- --push
+```
+
+This pins the new version in each site, builds it, and commits and pushes only
+the sites that build.
