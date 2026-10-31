@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "docs-kit-workspace",
+      "name": "groundwork",
     },
     "packages/docs-kit": {
       "name": "@timmo001/docs-kit",

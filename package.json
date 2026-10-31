@@ -1,5 +1,5 @@
 {
-  "name": "docs-kit-workspace",
+  "name": "groundwork",
   "private": true,
   "type": "module",
   "packageManager": "bun@1.4.4",
