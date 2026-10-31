@@ -132,4 +132,4 @@ repository; upload it under the repository settings.
 
 ## Development
 
-See the [repository README](https://github.com/timmo001/docs-kit#development).
+See the [repository README](https://github.com/timmo001/groundwork#development).

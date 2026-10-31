@@ -13,7 +13,7 @@ sidebars, logos, illustrations and reference generators in the site.
 
 Check the site's manifest and lockfile for the installed docs-kit and Blume
 versions, then read the installed package README and exports. If they differ
-from the [README](https://github.com/timmo001/docs-kit/blob/main/packages/docs-kit/README.md)
+from the [README](https://github.com/timmo001/groundwork/blob/main/packages/docs-kit/README.md)
 on `main`, follow the installed release.
 
 ## Set up or change a site
@@ -33,7 +33,7 @@ on `main`, follow the installed release.
 
 ## Change the package
 
-Make shared changes in the [docs-kit repository](https://github.com/timmo001/docs-kit)
+Make shared changes in the [Groundwork repository](https://github.com/timmo001/groundwork)
 rather than copying files into one site. Check a component, theme or config
 change by building a site against a packed tarball: linked installs break
 Astro's style compilation.

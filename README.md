@@ -1,4 +1,4 @@
-# docs-kit
+# Groundwork
 
 Shared branding, layout and config for my documentation sites, published as
 [`@timmo001/docs-kit`](packages/docs-kit/README.md) on npm and JSR.
@@ -17,7 +17,7 @@ Shared branding, layout and config for my documentation sites, published as
 changing a docs site with the package. Install it with:
 
 ```sh
-npx skills add timmo001/docs-kit
+npx skills add timmo001/groundwork
 ```
 
 Or import the `skills/docs-kit/` directory unchanged into your skill collection.
@@ -40,7 +40,7 @@ source path, which breaks Astro's style compilation.
 ## Releases
 
 Before the first automated publication, configure npm trusted publishing for
-`timmo001/docs-kit` with workflow filename `release.yml`, and link the JSR
+`timmo001/groundwork` with workflow filename `release.yml`, and link the JSR
 package to the repository. An initial npm publication may be needed before
 trusted publishing is available.
 

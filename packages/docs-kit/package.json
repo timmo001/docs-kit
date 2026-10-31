@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timmo001/docs-kit.git",
+    "url": "git+https://github.com/timmo001/groundwork.git",
     "directory": "packages/docs-kit"
   },
   "scripts": {

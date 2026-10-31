@@ -1,4 +1,4 @@
-# docs-kit
+# Groundwork
 
 Shared branding, layout and config for timmo001 documentation sites, published
 as `@timmo001/docs-kit`. The READMEs document usage and development.
