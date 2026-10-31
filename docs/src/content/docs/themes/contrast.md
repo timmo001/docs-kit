@@ -180,6 +180,23 @@ Optional. Mapped from its own palette, so it's reported rather than held to the 
 | Status: danger | 4.8 | – | 5.43 | 6.34 |
 | on-accent | 4.5 | – | 9.69 | 9.69 |
 
+## Tokyo Night
+
+Optional. Mapped from its own palette, so it's reported rather than held to the targets.
+
+| Role | Target | Light | Dark | Darker |
+| --- | --- | --- | --- | --- |
+| text-strong | 11 | – | 8.32 ✗ | 9.64 ✗ |
+| text-primary | 9 | – | 8.32 ✗ | 9.64 |
+| text-secondary | 4.6 | – | 6.36 | 7.37 |
+| accent | 5 | – | 5.33 | 6.18 |
+| Status: info | 4.8 | – | 5.33 | 6.18 |
+| Status: success | 4.8 | – | 7.35 | 8.52 |
+| Status: important | 4.8 | – | 5.81 | 6.73 |
+| Status: warning | 4.8 | – | 6.72 | 7.79 |
+| Status: danger | 4.8 | – | 5.08 | 5.88 |
+| on-accent | 4.5 | – | 7.82 | 7.82 |
+
 ## Tokyo Night Day
 
 Optional. Mapped from its own palette, so it's reported rather than held to the targets.
@@ -213,23 +230,6 @@ Optional. Mapped from its own palette, so it's reported rather than held to the 
 | Status: warning | 4.8 | – | 8.04 | 9.41 |
 | Status: danger | 4.8 | – | 4.76 ✗ | 5.57 |
 | on-accent | 4.5 | – | 8.57 | 8.57 |
-
-## Tokyo Night Night
-
-Optional. Mapped from its own palette, so it's reported rather than held to the targets.
-
-| Role | Target | Light | Dark | Darker |
-| --- | --- | --- | --- | --- |
-| text-strong | 11 | – | 8.32 ✗ | 9.64 ✗ |
-| text-primary | 9 | – | 8.32 ✗ | 9.64 |
-| text-secondary | 4.6 | – | 6.36 | 7.37 |
-| accent | 5 | – | 5.33 | 6.18 |
-| Status: info | 4.8 | – | 5.33 | 6.18 |
-| Status: success | 4.8 | – | 7.35 | 8.52 |
-| Status: important | 4.8 | – | 5.81 | 6.73 |
-| Status: warning | 4.8 | – | 6.72 | 7.79 |
-| Status: danger | 4.8 | – | 5.08 | 5.88 |
-| on-accent | 4.5 | – | 7.82 | 7.82 |
 
 ## Tokyo Night Storm
 
