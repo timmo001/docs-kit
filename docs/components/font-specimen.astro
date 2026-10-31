@@ -1,0 +1,54 @@
+---
+const fonts = [
+  ["Mona Sans", '"Mona Sans Variable"', "Default"],
+  ["System UI", "system-ui", "Next, with nothing to download"],
+  ["Inter", '"Inter Variable"', "Featured"],
+  ["Geist", '"Geist Variable"', "Featured"],
+  ["IBM Plex Sans", '"IBM Plex Sans"', "Featured"],
+  ["Noto Sans", '"Noto Sans Variable"', "Featured"],
+  ["Albert Sans", '"Albert Sans Variable"', "Featured"],
+  ["Geist Mono", '"Geist Mono Variable"', "Code"],
+  ["JetBrains Mono", '"JetBrains Mono Variable"', "Code"],
+] as const;
+---
+
+<div class="specimens">
+  {
+    fonts.map(([name, family, note]) => (
+      <div class="specimen">
+        <p class="sample" style={`font-family: ${family}, system-ui`}>
+          Next boot: Arch Linux · 14 updates · 0.125rem
+        </p>
+        <p class="meta">
+          <strong>{name}</strong> · {note}
+        </p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .specimens {
+    display: grid;
+    gap: 0.75rem;
+    margin-block: 1.5rem;
+  }
+
+  .specimen {
+    padding: 0.75rem 1rem;
+    border: 1px solid #8884;
+    border-radius: 10px;
+  }
+
+  .sample {
+    margin: 0;
+    font-size: 1.375rem;
+    line-height: 1.4;
+  }
+
+  .meta {
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    opacity: 0.8;
+  }
+</style>

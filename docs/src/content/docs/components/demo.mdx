@@ -1,0 +1,25 @@
+---
+title: Live demo
+description: The first Lit component on the base, running on the page through an Astro Demo component.
+---
+
+Components are Lit elements on native elements, styled only through `--ds-*` variables. They're copied into each app and owned there, then kept in sync.
+
+Blume's islands don't support Lit, so demos load through an Astro `Demo` component instead. It wraps its content in a Lit frame with a theme and mode picker, and a bundled script registers the elements. Pick a theme or mode and the buttons follow it.
+
+<Demo theme="glazing">
+  <ds-button variant="primary">Reboot</ds-button>
+  <ds-button variant="accent">Plan boot</ds-button>
+  <ds-button>Cancel</ds-button>
+  <ds-button variant="danger">Remove backup</ds-button>
+  <ds-button disabled>Unavailable</ds-button>
+</Demo>
+
+## `ds-button`
+
+| Attribute | Values |
+| --- | --- |
+| `variant` | `neutral` (default), `primary`, `accent` or `danger` |
+| `disabled` | Disables the native button inside |
+
+It renders a native `<button>` in its shadow root, so keyboard use, focus and form behaviour come from the browser. The focus ring uses `--ds-color-focus` and `--ds-focus-width`.

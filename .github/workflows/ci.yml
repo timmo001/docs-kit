@@ -33,6 +33,19 @@ jobs:
         run: npm pack --dry-run
         working-directory: packages/docs-kit
 
+  docs:
+    name: Build docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up mise
+        uses: jdx/mise-action@5ac50f778e26fac95da98d50503682459e86d566
+
+      - name: Build docs
+        run: mise run docs:build
+
   actionlint:
     uses: timmo001/workflows/.github/workflows/lint-actionlint.yml@de4221cd9b24ad3d61aa1db87b6e4864cf56d5a1 # 20261027.0
 

@@ -20,6 +20,29 @@ usage and development.
 - Track work in issues with sub-issues and blocked-by relationships set. Plans,
   research and decisions go on the issue as artifacts.
 
+## Background Dev Servers
+
+- Start the docs dev server with `mise run serve:docs`, which runs it through
+  Pitchfork in the background and restarts it if it exits or stops responding.
+  Don't run `mise run docs:dev` or `blume dev` in the foreground from an agent.
+- Manage it with `mise run serve:docs:status`, `serve:docs:logs`,
+  `serve:docs:restart` and `serve:docs:stop`.
+- It's at `https://docs.groundwork.localhost` through the Pitchfork proxy, and
+  `http://127.0.0.1:7350/` or the next free port without it. Test through the
+  HTTPS address. Never add the proxy's own port, such as `:8443`: run
+  `pitchfork proxy doctor`, then `pitchfork proxy setup -y`, to restore the 443
+  redirect instead.
+
+## Tokens and themes
+
+- Themes are data in `packages/tokens/themes/*.json`, checked against the
+  Schema in `packages/tokens/src/schema.ts`. Change a theme there, never in a
+  generated file.
+- `mise run gen` writes every target in `packages/tokens/generated/` and the
+  generated theme and contrast pages in `docs/src/content/docs/themes/`.
+  `mise run check` fails when they're stale or a core theme misses a contrast
+  target.
+
 ## docs-kit
 
 The package lives in `packages/docs-kit/` and is the only one published.

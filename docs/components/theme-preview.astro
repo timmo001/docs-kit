@@ -1,0 +1,381 @@
+---
+import tokens from "@groundwork/tokens/themes.json";
+
+interface Props {
+  theme: string;
+  /** Show only these modes, such as ["dark"]. Defaults to every mode the theme has. */
+  modes?: string[];
+  compact?: boolean;
+}
+
+const { theme: id, modes: only, compact = false } = Astro.props;
+const theme = tokens.themes.find((item) => item.id === id);
+
+if (theme === undefined) throw new Error(`Unknown theme: ${id}`);
+
+const labels: Record<string, string> = {
+  light: "Light",
+  dark: "Dark",
+  darker: "Darker",
+};
+
+const modes = Object.keys(theme.modes).filter(
+  (mode) => only === undefined || only.includes(mode),
+);
+
+const statuses = [
+  ["info", "Note", "Sync runs every hour."],
+  ["success", "Tip", "All 12 checks passed."],
+  ["important", "Important", "Two decisions wait on you."],
+  ["warning", "Warning", "The token expires in 2 days."],
+  ["danger", "Caution", "This removes the backup."],
+] as const;
+---
+
+<div class:list={["previews", { compact }]}>
+  {
+    modes.map((mode) => (
+      <section
+        aria-label={`${theme.name}, ${labels[mode] ?? mode}`}
+        class="preview"
+        data-ds-mode={mode}
+        data-ds-theme={theme.id}
+      >
+        <header class="bar">
+          <span class="title">{theme.name}</span>
+          <span class="mode">{labels[mode] ?? mode}</span>
+        </header>
+        <div class="body">
+          <div class="panel">
+            <p class="label">Overview</p>
+            <h3 class="heading">Machine controls</h3>
+            <p class="primary">
+              Next boot is set to <a href="#top">Arch Linux</a>, with the VM test
+              bed on standby.
+            </p>
+            <p class="secondary">Updated 4 minutes ago</p>
+            <div class="row">
+              <button class="button primary-button" type="button">
+                Reboot
+              </button>
+              <button class="button accent-button" type="button">
+                Plan boot
+              </button>
+              <button class="button neutral-button" type="button">
+                Cancel
+              </button>
+            </div>
+          </div>
+          {!compact && (
+            <>
+              <label class="field">
+                <span class="label">Hostname</span>
+                <input type="text" value="workshop" />
+              </label>
+              <div class="row chips">
+                <span class="chip">Linux</span>
+                <span class="chip selected">Windows</span>
+                <span class="chip">Installer</span>
+              </div>
+              <div class="alerts">
+                {statuses.map(([status, title, text]) => (
+                  <p class={`alert ${status}`}>
+                    <strong>{title}</strong> {text}
+                  </p>
+                ))}
+              </div>
+              <table class="rows">
+                <tbody>
+                  <tr>
+                    <td>dotfiles</td>
+                    <td class="figure">14</td>
+                    <td>
+                      <span class="badge success">Passing</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>system-bridge</td>
+                    <td class="figure">3</td>
+                    <td>
+                      <span class="badge warning">Waiting</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>triage</td>
+                    <td class="figure">1</td>
+                    <td>
+                      <span class="badge danger">Failing</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          )}
+        </div>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .previews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+  }
+
+  .preview {
+    overflow: hidden;
+    font-family: var(--ds-font-sans);
+    font-size: var(--ds-font-size-s);
+    font-weight: var(--ds-font-weight-regular);
+    line-height: 1.5;
+    color: var(--ds-color-text-primary);
+    background: var(--ds-color-surface-default);
+    border: 1px solid var(--ds-color-border-normal);
+    border-radius: var(--ds-radius-panel);
+    box-shadow: var(--ds-shadow-m);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ds-space-3) var(--ds-space-5);
+    background: var(--ds-color-surface-lower);
+    border-bottom: 1px solid var(--ds-color-border-quiet);
+  }
+
+  .title {
+    font-weight: var(--ds-font-weight-strong);
+    color: var(--ds-color-text-strong);
+  }
+
+  .mode,
+  .label {
+    font-size: var(--ds-font-size-xs);
+    color: var(--ds-color-text-secondary);
+    text-transform: var(--ds-label-transform);
+    letter-spacing: var(--ds-label-tracking);
+  }
+
+  .label {
+    display: block;
+    margin: 0 0 var(--ds-space-2);
+    font-weight: var(--ds-font-weight-strong);
+  }
+
+  .body {
+    display: grid;
+    gap: var(--ds-space-5);
+    padding: var(--ds-space-5);
+  }
+
+  .panel {
+    position: relative;
+    padding: var(--ds-space-5);
+    padding-inline-start: calc(var(--ds-space-5) + var(--ds-panel-marker));
+    background-color: var(--ds-color-surface-raised);
+    background-image: var(--ds-panel-sheen);
+    border: var(--ds-border-width) solid var(--ds-border-colour);
+    border-top: max(var(--ds-border-width), var(--ds-panel-flange)) solid
+      var(--ds-panel-flange-colour);
+    border-radius: var(--ds-radius-panel);
+    box-shadow: var(--ds-shadow-s);
+  }
+
+  .panel::before {
+    position: absolute;
+    inset-block: var(--ds-space-4);
+    inset-inline-start: 0;
+    width: var(--ds-panel-marker);
+    content: "";
+    background: var(--ds-color-accent);
+  }
+
+  .heading {
+    margin: 0 0 var(--ds-space-2);
+    font-size: var(--ds-font-size-l);
+    font-weight: var(--ds-font-weight-strong);
+    color: var(--ds-color-text-strong);
+    text-transform: var(--ds-label-transform);
+    letter-spacing: var(--ds-label-tracking);
+  }
+
+  .primary,
+  .secondary {
+    margin: 0 0 var(--ds-space-3);
+  }
+
+  .secondary {
+    font-size: var(--ds-font-size-xs);
+    color: var(--ds-color-text-secondary);
+  }
+
+  a {
+    color: var(--ds-link-colour);
+    text-decoration-thickness: var(--ds-link-underline);
+    text-underline-offset: 0.2em;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ds-space-3);
+  }
+
+  .button {
+    padding: var(--ds-space-3) var(--ds-space-5);
+    font: inherit;
+    font-weight: var(--ds-font-weight-strong);
+    text-transform: var(--ds-label-transform);
+    letter-spacing: var(--ds-label-tracking);
+    cursor: pointer;
+    border: var(--ds-border-width) solid transparent;
+    border-radius: var(--ds-radius-control);
+    transition: background-color var(--ds-motion-fast) var(--ds-motion-easing);
+  }
+
+  .button:focus-visible,
+  input:focus-visible {
+    outline: var(--ds-focus-width) solid var(--ds-color-focus);
+    outline-offset: var(--ds-focus-offset);
+  }
+
+  .primary-button {
+    color: var(--ds-color-on-primary);
+    background: var(--ds-color-fill-primary-resting);
+  }
+
+  .primary-button:hover {
+    background: var(--ds-color-fill-primary-hovered);
+  }
+
+  .accent-button {
+    color: var(--ds-color-on-accent);
+    background: var(--ds-color-fill-accent-resting);
+  }
+
+  .accent-button:hover {
+    background: var(--ds-color-fill-accent-hovered);
+  }
+
+  .neutral-button {
+    color: var(--ds-color-text-strong);
+    background: var(--ds-color-fill-neutral-resting);
+    border-color: var(--ds-border-colour);
+  }
+
+  .neutral-button:hover {
+    background: var(--ds-color-fill-neutral-hovered);
+  }
+
+  .field input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--ds-space-3) var(--ds-space-4);
+    font: inherit;
+    color: var(--ds-color-text-strong);
+    background: var(--ds-color-surface-raised);
+    border: max(1px, var(--ds-border-width)) solid var(--ds-color-border-normal);
+    border-radius: var(--ds-radius-control);
+  }
+
+  .chip {
+    padding: var(--ds-space-1) var(--ds-space-4);
+    font-size: var(--ds-font-size-xs);
+    color: var(--ds-color-text-primary);
+    background: var(--ds-color-fill-neutral-resting);
+    border-radius: var(--ds-radius-chip);
+  }
+
+  .chip.selected {
+    color: var(--ds-color-accent);
+    background: var(--ds-color-fill-accent-quiet);
+    box-shadow: inset 0 0 0 1px var(--ds-color-border-accent);
+  }
+
+  .alerts {
+    display: grid;
+    gap: var(--ds-space-2);
+  }
+
+  .alert {
+    margin: 0;
+    padding: var(--ds-space-3) var(--ds-space-4);
+    color: var(--ds-color-text-primary);
+    border-inline-start: 3px solid currentcolor;
+    border-radius: var(--ds-radius-s);
+  }
+
+  .alert strong {
+    font-weight: var(--ds-font-weight-strong);
+  }
+
+  .rows {
+    width: 100%;
+    margin: 0;
+    font-size: var(--ds-font-size-s);
+    border-collapse: collapse;
+  }
+
+  .rows td {
+    padding: var(--ds-row-padding) var(--ds-space-3);
+    border-top: 1px solid var(--ds-color-border-quiet);
+  }
+
+  .figure {
+    font-family: var(--ds-font-figures);
+    font-variant-numeric: tabular-nums;
+    text-align: end;
+  }
+
+  .badge {
+    padding: 0 var(--ds-space-3);
+    font-size: var(--ds-font-size-2xs);
+    font-weight: var(--ds-font-weight-strong);
+    text-transform: var(--ds-label-transform);
+    letter-spacing: var(--ds-label-tracking);
+    border-radius: var(--ds-radius-chip);
+  }
+
+  .info {
+    --status: var(--ds-color-info);
+    --status-fill: var(--ds-color-fill-info-quiet);
+  }
+
+  .success {
+    --status: var(--ds-color-success);
+    --status-fill: var(--ds-color-fill-success-quiet);
+  }
+
+  .important {
+    --status: var(--ds-color-important);
+    --status-fill: var(--ds-color-fill-important-quiet);
+  }
+
+  .warning {
+    --status: var(--ds-color-warning);
+    --status-fill: var(--ds-color-fill-warning-quiet);
+  }
+
+  .danger {
+    --status: var(--ds-color-danger);
+    --status-fill: var(--ds-color-fill-danger-quiet);
+  }
+
+  .alert,
+  .badge {
+    background: var(--status-fill);
+  }
+
+  .alert {
+    border-inline-start-color: var(--status);
+  }
+
+  .alert strong,
+  .badge {
+    color: var(--status);
+  }
+</style>

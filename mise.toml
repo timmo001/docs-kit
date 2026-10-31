@@ -36,6 +36,62 @@ description = "Check formatting without writing"
 depends = ["install"]
 run = "bun run --filter './packages/*' format:check"
 
+[tasks.gen]
+description = "Generate every token target and generated docs page from the theme documents"
+depends = ["install"]
+dir = "packages/tokens"
+run = "bun run gen"
+
+[tasks."gen:check"]
+description = "Check generated files match the theme documents"
+depends = ["install"]
+dir = "packages/tokens"
+run = "bun run gen:check"
+
+[tasks.contrast]
+description = "Check every core theme meets its contrast targets"
+depends = ["install"]
+dir = "packages/tokens"
+run = "bun run contrast"
+
+[tasks."docs:dev"]
+description = "Run the docs dev server"
+depends = ["install"]
+dir = "docs"
+# A reused Vite cache makes every page fail to resolve Astro's ClientRouter script
+run = ["rm -rf .blume/.cache/vite", "bun run dev"]
+
+[tasks."docs:build"]
+description = "Build the docs site"
+depends = ["install"]
+dir = "docs"
+run = "bun run build"
+
+[tasks."docs:preview"]
+description = "Preview the built docs site"
+dir = "docs"
+run = "bun run preview"
+
+[tasks."serve:docs"]
+description = "Start the docs dev server in the background through Pitchfork"
+run = "pitchfork start docs"
+
+[tasks."serve:docs:status"]
+description = "Show the background docs dev server status"
+run = "pitchfork status docs"
+
+[tasks."serve:docs:logs"]
+description = "Follow the background docs dev server logs"
+run = "pitchfork logs -t docs"
+
+[tasks."serve:docs:restart"]
+description = "Restart the background docs dev server"
+run = "pitchfork restart docs"
+
+[tasks."serve:docs:stop"]
+description = "Stop the background docs dev server"
+run = "pitchfork stop docs"
+
 [tasks."bump-consumers"]
 description = "Bump @timmo001/docs-kit in consuming repositories"
 depends = ["install"]
@@ -43,5 +99,5 @@ dir = "packages/bump-consumers"
 run = "bun run src/bump-consumers.ts"
 
 [tasks.check]
-description = "Lint, type-check and verify formatting"
-depends = ["lint", "typecheck", "format:check"]
+description = "Lint, type-check, verify formatting, generated files and contrast"
+depends = ["lint", "typecheck", "format:check", "gen:check", "contrast"]

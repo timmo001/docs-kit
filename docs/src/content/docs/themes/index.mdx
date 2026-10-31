@@ -1,0 +1,34 @@
+---
+title: Themes
+description: Base and six themes, each a small data document solved into light, dark and Darker.
+---
+
+A theme is a small data document: a background, an accent and a style. The style covers shape, density, type, borders and surface accents. Every role is solved to the same contrast targets, so every theme reads the same however it looks.
+
+Apps offer light, dark and follow system, with separate light and dark picks. Each app sets its default theme and opts in to the others.
+
+<ThemeGrid />
+
+## Darker
+
+The OLED version of every theme's dark mode, offered for all of them. Every surface drops by 0.045 OKLCH lightness with hues kept, and text and accents stay as they are, so contrast only goes up. Field outlines use the stronger border so they stay visible. The normal dark stays the default.
+
+## Names
+
+One word in Title Case, naming the building itself, its materials or its parts, never people or times of day. They follow Groundwork's name, so if it's renamed, the themes are renamed with it.
+
+## Using a theme
+
+On the web, load `themes.css` and set the theme and mode on any element:
+
+```html
+<body data-ds-theme="glazing" data-ds-mode="dark">
+```
+
+Leave `data-ds-mode` off to follow the system's light or dark setting. Darker is opt-in with `data-ds-mode="darker"`.
+
+## More
+
+- [Optional themes](/themes/optional): Catppuccin and Tokyo Night.
+- [Contrast report](/themes/contrast): every role against its target.
+- [Writing a theme](/themes/writing-a-theme): the document format.

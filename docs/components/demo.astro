@@ -1,0 +1,24 @@
+---
+interface Props {
+  /** The theme the demo renders in. */
+  theme?: string;
+}
+
+const { theme = "base" } = Astro.props;
+---
+
+<ds-demo-frame class="demo" data-ds-theme={theme}>
+  <slot />
+</ds-demo-frame>
+
+<script>
+  // Registers the Lit elements the demos use. Astro bundles this once per page.
+  import "../demos/index.ts";
+</script>
+
+<style>
+  .demo {
+    display: block;
+    margin-block: 1.5rem;
+  }
+</style>

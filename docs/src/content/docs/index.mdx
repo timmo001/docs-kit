@@ -1,0 +1,28 @@
+---
+title: Groundwork
+description: One design and architecture system for every app, site, CLI, terminal UI, Omarchy panel and agent.
+---
+
+Groundwork is one way of designing and building everything in my repositories: how it looks, how it behaves and how it's put together. Every app starts from the same base and picks its own theme, so the apps stay related without looking the same or looking generated.
+
+It isn't a web kit. The same design reaches web apps and sites, desktop apps, terminal apps and CLI output, Omarchy panels, Home Assistant cards and agents. Themes and tokens are written as data, and each target gets its own generator.
+
+<ThemeGrid />
+
+## Where to start
+
+- [Principles](/principles): the rules every part follows.
+- [Targets](/targets): how each kind of app gets the design.
+- [Foundations](/foundations): colour roles, type, spacing, radius, motion and focus.
+- [Themes](/themes): Base and the six themes, each shown live in light, dark and Darker.
+- [Components](/components/demo): the first Lit component, running on the page.
+
+## What's here today
+
+| Part | Where |
+| --- | --- |
+| Theme and token documents, the solver and every generator | [`packages/tokens`](https://github.com/timmo001/groundwork/tree/main/packages/tokens) |
+| Shared docs-site branding, layout and config | [`packages/docs-kit`](https://github.com/timmo001/groundwork/tree/main/packages/docs-kit), published as `@timmo001/docs-kit` |
+| This site | [`docs`](https://github.com/timmo001/groundwork/tree/main/docs) |
+
+The plan and its progress are on the [tracking issue](https://github.com/timmo001/groundwork/issues/32).

@@ -5,17 +5,20 @@ Omarchy panels and agents: how they look, how they behave and how they're put
 together. Every app starts from the same base and adds its own theme, so they
 stay related without all looking the same.
 
-It's early. Today the repo holds [`@timmo001/docs-kit`](packages/docs-kit/README.md),
-the shared branding, layout and config for my documentation sites. The plan and
-its progress live in [#32](https://github.com/timmo001/groundwork/issues/32),
-with the working document attached to it.
+It's early: the themes and tokens and the docs site are in, with components and
+the rest to follow. The plan and its progress live in
+[#32](https://github.com/timmo001/groundwork/issues/32), with the working
+document attached to it.
 
 ## What's here
 
-| Path                                          | What it is                                                     |
-| --------------------------------------------- | -------------------------------------------------------------- |
-| [`packages/docs-kit`](packages/docs-kit)      | `@timmo001/docs-kit`, published on npm and JSR                 |
-| [`skills/docs-kit`](skills/docs-kit/SKILL.md) | An agent skill for setting up or changing a site with docs-kit |
+| Path                                                 | What it is                                                                              |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`packages/tokens`](packages/tokens/themes)          | Theme documents, the solver and the generators for CSS, JSON, TS, QML, OpenTUI and ANSI |
+| [`docs`](docs)                                       | The Groundwork docs site, showing every theme live                                      |
+| [`packages/docs-kit`](packages/docs-kit)             | `@timmo001/docs-kit`, published on npm and JSR                                          |
+| [`packages/bump-consumers`](packages/bump-consumers) | Rolls a docs-kit release out to the sites that use it                                   |
+| [`skills/docs-kit`](skills/docs-kit/SKILL.md)        | An agent skill for setting up or changing a site with docs-kit                          |
 
 ## docs-kit
 
@@ -41,12 +44,21 @@ Or import the `skills/docs-kit/` directory unchanged into your skill collection.
 ## Development
 
 Use the tool versions pinned in [mise.toml](mise.toml) and Bun for
-dependencies. The root `package.json` is a Bun workspace over `packages/*`.
+dependencies. The root `package.json` is a Bun workspace over `packages/*` and
+`docs`.
 
 ```sh
 mise run install
+mise run gen     # regenerate tokens and the generated theme pages
 mise run check
 ```
+
+Themes are data in [`packages/tokens/themes`](packages/tokens/themes). `mise
+run check` fails when generated files are stale or a core theme misses a
+contrast target.
+
+Run the docs site in the background with `mise run serve:docs`. Pitchfork
+serves it at <https://docs.groundwork.localhost>.
 
 [hk](hk.pkl) runs the same checks plus the shared Markdown, YAML and workflow
 linters before each push. Run them by hand with `hk check --all`.
