@@ -1,22 +1,31 @@
 # Groundwork
 
-Shared branding, layout and config for timmo001 documentation sites, published
-as `@timmo001/docs-kit`. The READMEs document usage and development.
+One design and architecture system for every app, site, CLI, terminal UI,
+Omarchy panel and agent. Today it holds `@timmo001/docs-kit`, the shared docs
+site package. The plan is tracked in #32, with the working document attached as
+an issue artifact; check it before adding a new part. The READMEs document
+usage and development.
 
-## Tooling
+## Repository
 
-- Use mise-pinned tools and Bun. Keep `bun.lock` in sync with the package's
-  `package.json`.
-- Use `mise run format` and `mise run check` for validation. There is no build;
-  the package ships source.
-- Keep package code under `packages/docs-kit/`. Keep `package.json` and
-  `jsr.json` versions and exports in step.
+- It's public. Nothing personal goes in: no home paths, machine or host names,
+  private repo details or private config.
+- Use mise-pinned tools and Bun. Keep `bun.lock` in sync with the workspace's
+  `package.json` files, and pin dependencies to exact versions.
+- Use `mise run format` and `mise run check` for validation.
+- Put each package under `packages/<name>/`.
 - Use lowercase filenames, with kebab-case for multiword names.
 - Use the shared `@timmo001/oxlint-rules/configs/recommended` preset and its
   supported Oxlint peers.
+- Track work in issues with sub-issues and blocked-by relationships set. Plans,
+  research and decisions go on the issue as artifacts.
 
-## Package conventions
+## docs-kit
 
+The package lives in `packages/docs-kit/` and is the only one published.
+
+- There is no build; the package ships source.
+- Keep `package.json` and `jsr.json` versions and exports in step.
 - Keep the root export free of docs-tool dependencies. Put tool-specific code
   under its own entry point, such as `src/blume/`.
 - Use scoped CSS in components rather than Tailwind utilities, since consumers'
