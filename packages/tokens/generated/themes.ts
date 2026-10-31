@@ -7,6 +7,7 @@ export const themes = [
     "description": "Neutral surfaces with a slight blue-grey tint, black and white primaries, and links as strong text. What every theme builds on.",
     "optional": false,
     "family": null,
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -204,6 +205,7 @@ export const themes = [
     "description": "Cool periwinkle, like glass and Tokyo Night. Large radii, faint borders and a glassy sheen.",
     "optional": false,
     "family": null,
+    "examples": [],
     "style": {
       "font": "Inter",
       "mono": "Geist Mono",
@@ -401,6 +403,7 @@ export const themes = [
     "description": "Charcoal with surveyor's marker pink. Boxy, thick borders, bold weights and a marker bar.",
     "optional": false,
     "family": null,
+    "examples": [],
     "style": {
       "font": "Geist",
       "mono": "Geist Mono",
@@ -598,6 +601,7 @@ export const themes = [
     "description": "Welsh slate's purple-grey with a mauve accent. Round, with pill buttons and soft borders.",
     "optional": false,
     "family": null,
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -795,6 +799,7 @@ export const themes = [
     "description": "Night navy with red-oxide orange. Dense and square, with an accent flange, capitals and table rows.",
     "optional": false,
     "family": null,
+    "examples": [],
     "style": {
       "font": "Geist",
       "figures": "Geist Mono",
@@ -990,9 +995,12 @@ export const themes = [
   {
     "id": "bridge",
     "name": "Bridge",
-    "description": "System Bridge's blue, with its current radii and pill chips.",
+    "description": "A clear, bright blue on neutral charcoal. Medium radii, soft borders and pill chips.",
     "optional": false,
     "family": null,
+    "examples": [
+      "System Bridge"
+    ],
     "style": {
       "font": "Inter",
       "mono": "JetBrains Mono",
@@ -1187,9 +1195,12 @@ export const themes = [
   {
     "id": "snag",
     "name": "Snag",
-    "description": "Triage's amber. Compact and table-first, with square badges.",
+    "description": "Warm amber on near-black. Compact and table-first, with square badges.",
     "optional": false,
     "family": null,
+    "examples": [
+      "Triage"
+    ],
     "style": {
       "font": "System UI",
       "mono": "JetBrains Mono",
@@ -1387,6 +1398,7 @@ export const themes = [
     "description": "Catppuccin Frappé, mapped onto the roles so it stays faithful to the Catppuccin palette.",
     "optional": true,
     "family": "Catppuccin",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -1537,6 +1549,7 @@ export const themes = [
     "description": "Catppuccin Latte, mapped onto the roles so it stays faithful to the Catppuccin palette.",
     "optional": true,
     "family": "Catppuccin",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -1640,6 +1653,7 @@ export const themes = [
     "description": "Catppuccin Macchiato, mapped onto the roles so it stays faithful to the Catppuccin palette.",
     "optional": true,
     "family": "Catppuccin",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -1790,6 +1804,7 @@ export const themes = [
     "description": "Catppuccin Mocha, mapped onto the roles so it stays faithful to the Catppuccin palette.",
     "optional": true,
     "family": "Catppuccin",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -1940,6 +1955,7 @@ export const themes = [
     "description": "Tokyo Night Day, mapped onto the roles so it stays faithful to the Tokyo Night palette.",
     "optional": true,
     "family": "Tokyo Night",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -2043,6 +2059,7 @@ export const themes = [
     "description": "Tokyo Night Moon, mapped onto the roles so it stays faithful to the Tokyo Night palette.",
     "optional": true,
     "family": "Tokyo Night",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -2193,6 +2210,7 @@ export const themes = [
     "description": "Tokyo Night Night, mapped onto the roles so it stays faithful to the Tokyo Night palette.",
     "optional": true,
     "family": "Tokyo Night",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",
@@ -2343,6 +2361,7 @@ export const themes = [
     "description": "Tokyo Night Storm, mapped onto the roles so it stays faithful to the Tokyo Night palette.",
     "optional": true,
     "family": "Tokyo Night",
+    "examples": [],
     "style": {
       "font": "Mona Sans",
       "mono": "Geist Mono",

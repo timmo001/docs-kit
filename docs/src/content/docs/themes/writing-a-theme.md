@@ -42,6 +42,7 @@ Themes live in `packages/tokens/themes/`, one JSON file each, checked against th
 | `style.link` | Accent or strong text, with a thin or thick underline. |
 | `style.surfaceAccent` | `none`, `sheen` (a faint accent gradient), `marker` (an accent bar on the left) or `flange` (an accent edge on top). |
 | `style.rows` | `cards` or `dense` table rows for lists. |
+| `examples` | Optional. Apps that use the theme, listed on its page as examples. Any app can pick any theme. |
 
 Backgrounds stay plain: a style changes shape and accents, never the background itself.
 

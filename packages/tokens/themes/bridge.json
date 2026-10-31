@@ -2,7 +2,8 @@
   "kind": "solved",
   "id": "bridge",
   "name": "Bridge",
-  "description": "System Bridge's blue, with its current radii and pill chips.",
+  "description": "A clear, bright blue on neutral charcoal. Medium radii, soft borders and pill chips.",
+  "examples": ["System Bridge"],
   "background": "#1e1e22",
   "accent": "#549ff7",
   "style": {

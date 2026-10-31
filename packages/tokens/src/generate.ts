@@ -193,6 +193,7 @@ const data = (themes: readonly ResolvedTheme[]) => ({
     description: theme.description,
     optional: theme.optional,
     family: theme.family ?? null,
+    examples: theme.examples,
     style: theme.style,
     properties: styleProperties(theme.style),
     modes: hexModes(theme),
@@ -349,6 +350,12 @@ export const themePage = (theme: ResolvedTheme) =>
     "",
     `<ThemePreview theme="${theme.id}" />`,
     "",
+    ...(theme.examples.length === 0
+      ? []
+      : [
+          `Example users: ${theme.examples.join(", ")}. Any app can pick any theme.`,
+          "",
+        ]),
     "## Style",
     "",
     "| | |",

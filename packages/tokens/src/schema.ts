@@ -76,6 +76,8 @@ export const SolvedTheme = Schema.Struct({
   background: Hex,
   accent: Hex,
   style: Style,
+  /** Apps that use the theme, as examples. Any app can pick any theme. */
+  examples: Schema.optionalKey(Schema.Array(Schema.String)),
 });
 
 export interface SolvedTheme extends Schema.Schema.Type<typeof SolvedTheme> {}

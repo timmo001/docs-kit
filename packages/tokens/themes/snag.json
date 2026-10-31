@@ -2,7 +2,8 @@
   "kind": "solved",
   "id": "snag",
   "name": "Snag",
-  "description": "Triage's amber. Compact and table-first, with square badges.",
+  "description": "Warm amber on near-black. Compact and table-first, with square badges.",
+  "examples": ["Triage"],
   "background": "#1e1e20",
   "accent": "#c99137",
   "style": {

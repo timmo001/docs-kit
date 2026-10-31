@@ -54,6 +54,8 @@ export interface ResolvedTheme {
   readonly description: string;
   readonly optional: boolean;
   readonly family: string | undefined;
+  /** Apps that use the theme, as examples. */
+  readonly examples: readonly string[];
   readonly style: Style;
   readonly modes: Partial<Record<Mode, Roles>>;
 }
@@ -322,6 +324,7 @@ export const resolve = (theme: Theme, baseStyle: Style): ResolvedTheme => {
       description: `${theme.name}, mapped onto the roles so it stays faithful to the ${theme.family} palette.`,
       optional: true,
       family: theme.family,
+      examples: [],
       style: mappedStyle(baseStyle),
       modes:
         theme.mode === "dark"
@@ -338,6 +341,7 @@ export const resolve = (theme: Theme, baseStyle: Style): ResolvedTheme => {
     description: theme.description,
     optional: false,
     family: undefined,
+    examples: theme.examples ?? [],
     style: theme.style,
     modes: { light: solvedMode(theme, "light"), dark, darker: darker(dark) },
   };
