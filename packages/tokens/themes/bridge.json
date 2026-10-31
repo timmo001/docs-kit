@@ -1,0 +1,20 @@
+{
+  "kind": "solved",
+  "id": "bridge",
+  "name": "Bridge",
+  "description": "System Bridge's blue, with its current radii and pill chips.",
+  "background": "#1e1e22",
+  "accent": "#549ff7",
+  "style": {
+    "font": "Inter",
+    "mono": "JetBrains Mono",
+    "radius": { "panel": 12, "control": 8, "chip": 999 },
+    "border": { "width": 1, "strength": "soft" },
+    "weights": { "regular": 400, "strong": 600 },
+    "density": "normal",
+    "capitals": false,
+    "link": { "colour": "accent", "underline": "thin" },
+    "surfaceAccent": "none",
+    "rows": "cards"
+  }
+}

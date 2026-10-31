@@ -1,0 +1,20 @@
+{
+  "kind": "solved",
+  "id": "survey",
+  "name": "Survey",
+  "description": "Charcoal with surveyor's marker pink. Boxy, thick borders, bold weights and a marker bar.",
+  "background": "#1c1e22",
+  "accent": "#ea74b1",
+  "style": {
+    "font": "Geist",
+    "mono": "Geist Mono",
+    "radius": { "panel": 2, "control": 2, "chip": 2 },
+    "border": { "width": 2, "strength": "strong" },
+    "weights": { "regular": 500, "strong": 700 },
+    "density": "normal",
+    "capitals": false,
+    "link": { "colour": "accent", "underline": "thick" },
+    "surfaceAccent": "marker",
+    "rows": "cards"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "mapped",
+  "id": "catppuccin-latte",
+  "name": "Catppuccin Latte",
+  "family": "Catppuccin",
+  "mode": "light",
+  "palette": {
+    "lower": "#dce0e8",
+    "background": "#eff1f5",
+    "raised": "#e6e9ef",
+    "border": "#bcc0cc",
+    "text": "#4c4f69",
+    "muted": "#6c6f85",
+    "accent": "#8839ef",
+    "info": "#1e66f5",
+    "success": "#40a02b",
+    "important": "#8839ef",
+    "warning": "#df8e1d",
+    "danger": "#d20f39"
+  }
+}

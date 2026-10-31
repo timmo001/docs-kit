@@ -1,0 +1,20 @@
+{
+  "kind": "solved",
+  "id": "slate",
+  "name": "Slate",
+  "description": "Welsh slate's purple-grey with a mauve accent. Round, with pill buttons and soft borders.",
+  "background": "#221b25",
+  "accent": "#b78ad8",
+  "style": {
+    "font": "Mona Sans",
+    "mono": "Geist Mono",
+    "radius": { "panel": 20, "control": 999, "chip": 999 },
+    "border": { "width": 1, "strength": "soft" },
+    "weights": { "regular": 400, "strong": 600 },
+    "density": "normal",
+    "capitals": false,
+    "link": { "colour": "accent", "underline": "thin" },
+    "surfaceAccent": "none",
+    "rows": "cards"
+  }
+}

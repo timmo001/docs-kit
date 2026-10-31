@@ -1,0 +1,21 @@
+{
+  "kind": "mapped",
+  "id": "tokyo-night-storm",
+  "name": "Tokyo Night Storm",
+  "family": "Tokyo Night",
+  "mode": "dark",
+  "palette": {
+    "lower": "#1f2335",
+    "background": "#24283b",
+    "raised": "#292e42",
+    "border": "#3b4261",
+    "text": "#c0caf5",
+    "muted": "#a9b1d6",
+    "accent": "#7aa2f7",
+    "info": "#7aa2f7",
+    "success": "#9ece6a",
+    "important": "#bb9af7",
+    "warning": "#e0af68",
+    "danger": "#f7768e"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "mapped",
+  "id": "catppuccin-macchiato",
+  "name": "Catppuccin Macchiato",
+  "family": "Catppuccin",
+  "mode": "dark",
+  "palette": {
+    "lower": "#181926",
+    "background": "#24273a",
+    "raised": "#363a4f",
+    "border": "#494d64",
+    "text": "#cad3f5",
+    "muted": "#a5adcb",
+    "accent": "#c6a0f6",
+    "info": "#8aadf4",
+    "success": "#a6da95",
+    "important": "#c6a0f6",
+    "warning": "#eed49f",
+    "danger": "#ed8796"
+  }
+}

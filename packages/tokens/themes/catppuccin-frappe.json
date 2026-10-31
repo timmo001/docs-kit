@@ -1,0 +1,21 @@
+{
+  "kind": "mapped",
+  "id": "catppuccin-frappe",
+  "name": "Catppuccin Frappé",
+  "family": "Catppuccin",
+  "mode": "dark",
+  "palette": {
+    "lower": "#232634",
+    "background": "#303446",
+    "raised": "#414559",
+    "border": "#51576d",
+    "text": "#c6d0f5",
+    "muted": "#a5adce",
+    "accent": "#ca9ee6",
+    "info": "#8caaee",
+    "success": "#a6d189",
+    "important": "#ca9ee6",
+    "warning": "#e5c890",
+    "danger": "#e78284"
+  }
+}

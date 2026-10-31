@@ -1,0 +1,21 @@
+{
+  "kind": "mapped",
+  "id": "tokyo-night-moon",
+  "name": "Tokyo Night Moon",
+  "family": "Tokyo Night",
+  "mode": "dark",
+  "palette": {
+    "lower": "#1e2030",
+    "background": "#222436",
+    "raised": "#2f334d",
+    "border": "#3b4261",
+    "text": "#c8d3f5",
+    "muted": "#828bb8",
+    "accent": "#82aaff",
+    "info": "#82aaff",
+    "success": "#c3e88d",
+    "important": "#c099ff",
+    "warning": "#ffc777",
+    "danger": "#ff757f"
+  }
+}
