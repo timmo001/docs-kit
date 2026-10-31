@@ -48,6 +48,9 @@ mise run install
 mise run check
 ```
 
+[hk](hk.pkl) runs the same checks plus the shared Markdown, YAML and workflow
+linters before each push. Run them by hand with `hk check --all`.
+
 docs-kit ships TypeScript, Astro and CSS source, so there's no build step. To
 try a change in a site, pack it with `npm pack` in `packages/docs-kit` and
 install the tarball there. A linked or `file:` install points Vite at the
