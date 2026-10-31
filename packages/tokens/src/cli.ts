@@ -24,15 +24,7 @@ class TokensError extends Schema.TaggedError<TokensError>()("TokensError", {
 type Output = readonly [file: string, contents: string];
 
 /** Core themes in the order the docs present them; optional ones follow. */
-const order = [
-  "base",
-  "glazing",
-  "survey",
-  "slate",
-  "girder",
-  "bridge",
-  "snag",
-];
+const order = ["base", "glazing", "survey", "slate", "bridge", "snag"];
 
 const decodeTheme = Schema.decodeUnknownEffect(Schema.fromJsonString(Theme));
 

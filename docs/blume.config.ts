@@ -30,7 +30,6 @@ export default defineConfig(
             "/themes/glazing",
             "/themes/survey",
             "/themes/slate",
-            "/themes/girder",
             "/themes/bridge",
             "/themes/snag",
             "/themes/optional",

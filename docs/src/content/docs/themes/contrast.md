@@ -67,21 +67,6 @@ Each role is measured with the WCAG 2 ratio against the raised surface, the lowe
 | Status: danger | 4.8 | 4.82 | 5.47 | 6.15 |
 | on-accent | 4.5 | 5.11 | 7.16 | 7.16 |
 
-## Girder
-
-| Role | Target | Light | Dark | Darker |
-| --- | --- | --- | --- | --- |
-| text-strong | 11 | 11.04 | 11.02 | 12.48 |
-| text-primary | 9 | 9.02 | 9.02 | 10.22 |
-| text-secondary | 4.6 | 4.60 | 4.61 | 5.23 |
-| accent | 5 | 5.01 | 5.61 | 6.36 |
-| Status: info | 4.8 | 4.81 | 5.41 | 6.13 |
-| Status: success | 4.8 | 4.81 | 5.40 | 6.11 |
-| Status: important | 4.8 | 4.80 | 5.39 | 6.11 |
-| Status: warning | 4.8 | 4.80 | 5.38 | 6.10 |
-| Status: danger | 4.8 | 4.82 | 5.43 | 6.15 |
-| on-accent | 4.5 | 5.10 | 7.20 | 7.20 |
-
 ## Bridge
 
 | Role | Target | Light | Dark | Darker |
