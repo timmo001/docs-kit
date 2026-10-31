@@ -9,6 +9,7 @@
     "dist/**",
     "docs/dist/**",
     "docs/.blume/**",
+    "docs/.blume-verify/**",
     ".agents/skills/**",
   ],
 }
